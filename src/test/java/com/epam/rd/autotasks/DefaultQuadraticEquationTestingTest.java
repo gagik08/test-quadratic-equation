@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.RunWith;
+import org.junit.runner.notification.Failure;
 import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
@@ -52,6 +53,12 @@ public class DefaultQuadraticEquationTestingTest {
     public void testQuadraticEquationTwoRootsCasesTesting() {
         JUnitCore junit = new JUnitCore();
         Result result = junit.run(QuadraticEquationTwoRootsCasesTesting.class);
+
+        if (result.getFailureCount() > 0) {
+            for (Failure failure : result.getFailures()) {
+                System.out.println(failure.toString());
+            }
+        }
 
         assertEquals(0, result.getFailureCount());
         assertTrue("There must be at least 4 cases for parametrized tests", result.getRunCount() >= 4);

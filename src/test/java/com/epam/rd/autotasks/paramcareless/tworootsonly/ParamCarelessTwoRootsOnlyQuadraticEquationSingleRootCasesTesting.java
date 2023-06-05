@@ -1,5 +1,6 @@
 package com.epam.rd.autotasks.paramcareless.tworootsonly;
 
+import com.epam.rd.autotasks.QuadraticEquation;
 import com.epam.rd.autotasks.QuadraticEquationSingleRootCasesTesting;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -9,6 +10,6 @@ public class ParamCarelessTwoRootsOnlyQuadraticEquationSingleRootCasesTesting ex
 
     public ParamCarelessTwoRootsOnlyQuadraticEquationSingleRootCasesTesting(final double a, final double b, final double c, final double expected) {
         super(a, b, c, expected);
-        quadraticEquation = new ParamCarelessTwoRootsOnlyQuadraticEquation();
+        QuadraticEquation quadraticEquation = new ParamCarelessTwoRootsOnlyQuadraticEquation();
     }
 }
